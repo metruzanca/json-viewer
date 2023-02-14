@@ -13,7 +13,14 @@ const Renderer: FC<RendererProps> = ({ json, name, open }) => {
     return (
       <>
         <details open={open}>
-          <summary>{'Array: ['}</summary>
+          <summary>
+            {name ? (
+              <span className="text-sky-300">"{name}"</span>
+            ) : (
+              'Array'
+            )}
+            {': ['}
+          </summary>
           <div className='ml-4'>
             {json.map(item => (
               <div>
